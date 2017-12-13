@@ -1,0 +1,29 @@
+---
+server:
+  port: 9000
+security:
+  basic:
+    enabled: true
+  user:
+    name: codelab
+    password: codelab
+spring:
+  cloud:
+    config:
+      server:
+        #encrypt:
+        #  enabled: false
+        git:
+          uri: https://github.com/ginocui/springcloud-config-server
+          # private repo requires crediential
+          #username: uname
+          #password: passcode
+          search-paths:
+            - 'cafearea*'
+          repos:
+            perf:
+              pattern:
+                - '*/perf'
+              uri: https://github.com/ginocui/springcloud-config-server-perf
+              search-paths:
+                - 'cafearea*'
